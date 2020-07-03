@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<style>
+			.singlehmib h2{margin-top:0px;}
+			.navlink{
+				padding-left: 0;
+				list-style: none;
+				margin-top: 0;
+				margin-bottom: 0;
+				padding-bottom: 1.75rem;
+				justify-content: space-between;
+				display: flex;
+			}
+			.navlink li{
+				float:left;
+			}
+			.navlink>li>a{
+				padding-top: .625rem;
+			    padding-bottom: .625rem;
+			    text-decoration: none;
+			    color: #0033a1;
+			    transition: color .3s ease;
+			    font-weight: 700;
+			    display: block;
+			    font-size: 16px;
+			}
+			.navlink>li>a:hover{
+				color:#ff8400;
+			}
+
+			.has-search .form-control-feedback {
+			    right: initial;
+			    left: 0;
+			    color: #ccc;
+			}
+
+			.has-search .form-control {
+			    padding-right: 12px;
+			    padding-left: 34px;
+			}
+
+
+			.autocomplete-items {
+				position: absolute;
+				border: 1px solid #d4d4d4;
+				border-bottom: none;
+				border-top: none;
+				z-index: 99;
+				top: 100%;
+				left: 0;
+				right: 0;
+			}
+
+			.autocomplete-items div {
+				padding: 10px;
+				cursor: pointer;
+				background-color: #fff; 
+				border-bottom: 1px solid #d4d4d4; 
+			}
+
+			.autocomplete-items div:hover {
+				background-color: #e9e9e9; 
+			}
+
+			.autocomplete-active {
+				background-color: DodgerBlue !important; 
+				color: #ffffff; 
+			}
+
+			#searchCountryautocomplete-list{
+				color:#000;
+			}
+
+			.footer {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 2.5rem;   
+				padding:20px 0 40px!important;       
+			}
+
+			.page-container {
+				position: relative;
+				min-height: 100vh;
+			}
+
+			.content-wrapper {
+				padding-bottom: 10rem;    /* Footer height */
+			}
+			.pricelist{list-style: none;padding:0px;}
+			.pricelist>li{
+				padding:5px 10px;
+			}
+			.pricelist>li:nth-of-type(odd){
+				background-color: rgba(204, 207, 219, 0.8);
+			}
+			.callus{
+				margin-top: 50px;
+				border: 1px solid #64b866;
+				color: #fff;
+				font-size: 20px;
+				font-weight: 600;
+				text-transform: uppercase;
+				background: #499f58;
+				border-radius: 25px;
+				box-shadow:0px 5px 3px rgba(17,26,104,.2)
+			}
+		</style>
+	</head>
+	<body>
+		<div class="page-container">
+			<div class="content-wrapper">
+				<!-- HEADER -->
+				<!-- <section class="headerTopbar">
+		            <div class="container">
+		                <div class="row">
+		                    <div class="col-sm-6 col-xs-12">
+		                        <p class="headTOpinfo">
+		                            Cargo Pifour Transportation Company
+		                        </p>
+		                    </div>
+		                    <div class="col-sm-6 col-xs-12 text-right resMobcenter">
+		                        <div class="rightheaderlink">
+		                            <a href="#">Extras</a>
+		                            <a href="#">Buy Now</a>
+		                        </div>
+		                        <div class="language">
+		                            <a class="currentFlg" href="#">
+		                                <img src="../images/icon/english.png" alt="">
+		                                English
+		                                <i class="fa fa-caret-down"></i>
+		                            </a>
+		                            <ul class="flagList">
+		                                <li><a href="#"> <img alt="" src="../images/icon/english.png">English</a></li>
+		                                <li><a href="#"> <img alt="" src="../images/icon/brazil.png">brazil</a></li>
+		                                <li><a href="#"> <img alt="" src="../images/icon/france.png">france</a></li>
+		                            </ul>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </section> -->
+				<section class="headerMiddle">
+		            <div class="container">
+		                <div class="row">
+		                    <div class="col-sm-3 col-xs-12">
+		                        <div class="logo">
+		                            <a href="index.html">
+		                                <img src="../images/logo.png" alt="">
+		                            </a>
+		                        </div> 
+		                    </div>
+		                    <div class="col-sm-9 col-xs-12 text-right">
+		                        <div class="headerMRightinfo">
+		                            <div class="singlehmib">
+		                                <i class="fa fa-mobile-phone"></i>
+		                                <h2>Phone Number</h2>
+		                                <h4>0123 456 78 910</h4>
+		                            </div>
+		                            <div class="singlehmib">
+		                                <i class="fa fa-envelope-o"></i>
+		                                <h2>Email Us</h2>
+		                                <h4>info@cargopifour.com</h4>
+		                            </div>
+		                            <div class="singlehmib">
+		                                <i class="fa fa-clock-o"></i>
+		                                <h2>Working Hours</h2>
+		                                <h4>8:00 - 19:00 </h4>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		                <hr>
+		                <div class="row">
+		                	<div class="col-md-12">
+		                		<ul class="navlink">
+		                			<li><a href="estimation.html">Singapore</a></li>
+		                			<li><a href="estimation.html">Malaysia</a></li>
+		                			<li><a href="estimation.html">Hongkong</a></li>
+		                			<li><a href="estimation.html">Philippines</a></li>
+		                			<li><a href="estimation.html">China</a></li>
+		                		</ul>
+		                	</div>
+		                </div>
+		            </div>
+		        </section>
+		        <!-- END HEADER -->
+
+		        <!-- Content -->
+		        <section style="margin-top:25px;margin-bottom:25px;padding: 70px 0 65px;background: #f6fbff;">
+		        	<center style="margin-bottom:50px"><h2>ESTIMASI BIAYA PENGIRIMAN KE SINGAPORE</h2></center>
+		        	<div class="container">
+		        		<div class="row">
+		        			<div class="col-md-3">
+		        				<div class="" style="padding:25px;background: #fff;border-radius: 10px;box-shadow: 0 6px 20px rgba(17,26,104,.2);">
+			        				<center><img src="../images/logo/resized/fedex.png"></center>
+			        				<ul class="pricelist">
+			        					<li><b>1-3kg:</b> Rp 107.000</li>
+			        					<li><b>4-6kg:</b> Rp 91.720</li>
+			        					<li><b>7-9kg:</b> Rp 76.020</li>
+			        					<li><b>> 10kg: hubungi kami</b> </li>
+			        				</ul>
+			        			</div>
+		        			</div>
+		        			<div class="col-md-3">
+		        				<div class="" style="padding:25px;background: #fff;border-radius: 10px;box-shadow: 0 6px 20px rgba(17,26,104,.2);">
+			        				<center><img src="../images/logo/resized/aramex.png"></center>
+			        				<ul class="pricelist">
+			        					<li><b>1-3kg:</b> Rp 107.000</li>
+			        					<li><b>4-6kg:</b> Rp 91.720</li>
+			        					<li><b>7-9kg:</b> Rp 76.020</li>
+			        					<li><b>> 10kg: hubungi kami</b> </li>
+			        				</ul>
+			        			</div>
+		        			</div>
+		        			<div class="col-md-3">
+		        				<div class="" style="padding:25px;background: #fff;border-radius: 10px;box-shadow: 0 6px 20px rgba(17,26,104,.2);">
+									<center><img src="../images/logo/resized/dhl.png"></center>
+									<ul class="pricelist">
+			        					<li><b>1-3kg:</b> Rp 107.000</li>
+			        					<li><b>4-6kg:</b> Rp 91.720</li>
+			        					<li><b>7-9kg:</b> Rp 76.020</li>
+			        					<li><b>> 10kg: hubungi kami</b> </li>
+			        				</ul>
+								</div>
+		        			</div>
+		        			<div class="col-md-3">
+		        				<div class="" style="padding:25px;background: #fff;border-radius: 10px;box-shadow: 0 6px 20px rgba(17,26,104,.2);">
+									<center><img src="../images/logo/resized/tnt.png"></center>
+									<ul class="pricelist">
+			        					<li><b>1-3kg:</b> Rp 107.000</li>
+			        					<li><b>4-6kg:</b> Rp 91.720</li>
+			        					<li><b>7-9kg:</b> Rp 76.020</li>
+			        					<li><b>> 10kg: hubungi kami</b> </li>
+			        				</ul>
+								</div>
+		        			</div>
+		        		</div>
+		        		<div class="row">
+		        			<div class="col-md-4 col-md-offset-4 text-center callus">
+		        				Hubungi kami di 0813-4567-899
+		        			</div>
+		        		</div>
+		        	</div>
+		        </section>
+		        <!-- END Content -->
+		    </div>
+
+	        <div class="footer">
+	        	<div class="container">
+		        	<div class="app-footer__links__list">
+						<div class="app-footer__copyright">
+							<p class="app-footer__copyright__text">
+								<span class="text--bold">Copyright</span>
+								<span>© 2020 - All rights reserved</span>
+							</p>
+						</div>
+					</div>
+				</div>
+	        </div>
+	    </div>
+
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script>
+        	$('.search-button').click(function(){
+				$(this).parent().toggleClass('open');
+			});
+
+			function autocomplete(inp, arr) {
+				/*the autocomplete function takes two arguments,
+				the text field element and an array of possible autocompleted values:*/
+				var currentFocus;
+				
+				inp.addEventListener("input", function(e) {
+					var a, b, i, val = this.value;
+					closeAllLists();
+					if (!val) { return false;}
+					currentFocus = -1;
+					a = document.createElement("DIV");
+					a.setAttribute("id", this.id + "autocomplete-list");
+					a.setAttribute("class", "autocomplete-items");
+					this.parentNode.appendChild(a);
+					for (i = 0; i < arr.length; i++) {
+						if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+							b = document.createElement("DIV");
+							b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+							b.innerHTML += arr[i].substr(val.length);
+							b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+							b.addEventListener("click", function(e) {
+								inp.value = this.getElementsByTagName("input")[0].value;
+								closeAllLists();
+							});
+							a.appendChild(b);
+						}
+					}
+				});
+
+				inp.addEventListener("keydown", function(e) {
+					var x = document.getElementById(this.id + "autocomplete-list");
+					if (x) x = x.getElementsByTagName("div");
+						if (e.keyCode == 40) {
+						
+						currentFocus++;
+						addActive(x);
+					} else if (e.keyCode == 38) { 
+						currentFocus--;
+						addActive(x);
+					} else if (e.keyCode == 13) {
+						e.preventDefault();
+						if (currentFocus > -1) {
+							if (x) x[currentFocus].click();
+						}
+					}
+				});
+
+				function addActive(x) {
+					if (!x) return false;
+
+					removeActive(x);
+					if (currentFocus >= x.length) currentFocus = 0;
+					if (currentFocus < 0) currentFocus = (x.length - 1);
+					
+					x[currentFocus].classList.add("autocomplete-active");
+				}
+
+				function removeActive(x) {
+					for (var i = 0; i < x.length; i++) {
+					  x[i].classList.remove("autocomplete-active");
+					}
+				}
+
+				function closeAllLists(elmnt) {
+					var x = document.getElementsByClassName("autocomplete-items");
+					for (var i = 0; i < x.length; i++) {
+					  	if (elmnt != x[i] && elmnt != inp) {
+							x[i].parentNode.removeChild(x[i]);
+					  	}
+					}
+				}
+				
+				document.addEventListener("click", function (e) {
+				  	closeAllLists(e.target);
+				});
+			}
+
+			var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+
+			autocomplete(document.getElementById("searchCountry"), countries);
+        </script>
+	</body>
+</html>
